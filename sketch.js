@@ -14,7 +14,7 @@ function setup() {
 
 function draw() {
   background(51);
-  if (paused) {
+  if (!paused) {
     loadPixels();
     for (x = 0; x < width; x++) {
       for (y = 0; y < height; y++) {
@@ -44,7 +44,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (keyCode === 80) {
+  if (key === 'p') {
     paused = !paused;
   }
 }
