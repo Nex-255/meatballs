@@ -7,13 +7,13 @@ var blobs = []
 let paused = false
 
 function setup() {
-  createCanvas(400, 200);
+  createCanvas(400,400);
   colorMode(HSB);
   for (i = 0; i < 10; i++) blobs.push(new Blob(random(0, width), random(0, height)));
 }
 
 function draw() {
-  background(51);
+ 
   if (!paused) {
     loadPixels();
     for (x = 0; x < width; x++) {
@@ -34,12 +34,11 @@ function draw() {
       blobs[i].update();
     }
   } else {
-    push();
-    fill(15);
-    stroke(80,255,221);
+    fill(15,127);
+    stroke(255);
+    textSize(80);
     textAlign(CENTER,CENTER);
     text('PAUSED', width/2, height/2);
-    pop();
   }
 }
 
