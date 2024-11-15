@@ -11,7 +11,7 @@ class Blob {
     let angle = random(0, 2 * PI);
     this.xspeed = random(2, 5) * Math.cos(angle);
     this.yspeed = random(2, 5) * Math.sin(angle);
-    this.r = random(120, 240);
+    this.r = random(120,180);
   }
 
   update() {
