@@ -6,10 +6,14 @@
 var blobs = []
 let paused = false
 
+const buttons = []
+
 function setup() {
   createCanvas(400,400);
   colorMode(HSB);
   for (i = 0; i < 10; i++) blobs.push(new Blob(random(0, width), random(0, height)));
+  let b = new Button(50,150,250,100,'what the freak');
+  buttons.push(b);
 }
 
 function draw() {
@@ -33,7 +37,14 @@ function draw() {
     for (i = 0; i < blobs.length; i++) {
       blobs[i].update();
     }
-  } else {
+
+    for (let i = 0; i < buttons.length; i++) {
+      let button = buttons[i];
+      button.draw();
+    }
+  } 
+  else
+  {
     fill(15,127);
     stroke(255);
     textSize(80);
