@@ -12,7 +12,7 @@ function setup() {
   createCanvas(400,400);
   colorMode(HSB);
   for (i = 0; i < 10; i++) blobs.push(new Blob(random(0, width), random(0, height)));
-  let b = new Button(50,150,250,100,'what the freak');
+  let b = new Button(50,150,250,100,'what the freak','erm, what the sigma?');
   buttons.push(b);
 }
 
@@ -59,3 +59,9 @@ function keyPressed() {
   }
 }
   
+function mousePressed() {
+  for (let i = 0; i < buttons.length; i++) {
+    let button = buttons[i];
+    button.handleClick(mouseX,mouseY);
+  }
+}
