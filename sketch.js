@@ -5,15 +5,21 @@
 
 var blobs = []
 let paused = false
-
 const buttons = []
+let image;
+
+let b = new Button(image,50,150,250,100,'willem dafoe smoking cigarette with two oranges one of them moldy');
+buttons.push(b);
+
+function preload() {
+  img = loadImage('/assets/realphoto.jpg')
+}
 
 function setup() {
   createCanvas(400,400);
   colorMode(HSB);
   for (i = 0; i < 10; i++) blobs.push(new Blob(random(0, width), random(0, height)));
-  let b = new Button(50,150,250,100,'what the freak','erm, what the sigma?');
-  buttons.push(b);
+  
 }
 
 function draw() {
