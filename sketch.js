@@ -11,7 +11,7 @@ let image;
 
 
 function preload() {
-  img = loadImage('http://i.kym-cdn.com/photos/images/newsfeed/002/284/331/900.jpg')
+  image = loadImage('http://i.kym-cdn.com/photos/images/newsfeed/002/284/331/900.jpg')
 }
 
 function setup() {
