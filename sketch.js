@@ -6,19 +6,19 @@
 var blobs = []
 let paused = false
 const buttons = []
-let image;
+let moldy;
 
 
 
 function preload() {
-  image = loadImage('http://i.kym-cdn.com/photos/images/newsfeed/002/284/331/900.jpg')
+  moldy = loadImage('http://i.kym-cdn.com/photos/images/newsfeed/002/284/331/900.jpg')
 }
 
 function setup() {
   createCanvas(400,400);
   colorMode(HSB);
   for (i = 0; i < 10; i++) blobs.push(new Blob(random(0, width), random(0, height)));
-  let b = new Button(image,50,150,250,100,'willem dafoe smoking cigarette with two oranges one of them moldy');
+  let b = new Button(moldy,50,150,250,100,'willem dafoe smoking cigarette with two oranges one of them moldy');
   buttons.push(b);
 }
 
