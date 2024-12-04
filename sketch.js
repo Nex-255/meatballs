@@ -11,7 +11,7 @@ let moldy;
 
 
 function preload() {
-  moldy = loadImage('http://i.kym-cdn.com/photos/images/newsfeed/002/284/331/900.jpg')
+  moldy = loadImage('/assets/IMG_0820.jpg')
 }
 
 function setup() {
