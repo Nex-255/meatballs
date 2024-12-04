@@ -11,7 +11,7 @@ let moldy;
 
 
 function preload() {
-  moldy = loadImage('/assets/IMG_0820.jpg')
+  moldy = loadImage('/meatballs/assets/IMG_0820.jpg')
 }
 
 function setup() {
