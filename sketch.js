@@ -45,8 +45,8 @@ function draw() {
     }
 
     for (let i = 0; i < buttons.length; i++) {
-      let button = buttons[i];
-      button.draw();
+      buttons[i].update();
+      buttons[i].draw();
     }
   } 
   else
