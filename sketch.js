@@ -18,7 +18,7 @@ function setup() {
   createCanvas(400,400);
   colorMode(HSB);
   for (i = 0; i < 10; i++) blobs.push(new Blob(random(0, width), random(0, height)));
-  let b = new Button(moldy,50,150,250,100,'willem dafoe smoking cigarette with two oranges one of them moldy');
+  let b = new Button(moldy,50,150,250,100,5,5,'willem dafoe smoking cigarette with two oranges one of them moldy');
   buttons.push(b);
 }
 
