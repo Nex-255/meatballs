@@ -12,8 +12,10 @@ class Button {
     update() {
         this.x += this.xspeed;
         this.y += this.yspeed;
-        if ((this.x + this.w) > width || this.x < 0) this.xspeed *= -1;
-        if ((this.y + this.h) > height || this.y < 0) this.yspeed *= -1;
+        if ((this.x + this.w) > width || this.x < 0) {
+            this.xspeed *= -1;}
+        if ((this.y + this.h) > height || this.y < 0) {
+            this.yspeed *= -1;}
     }
     draw() {
         push();
