@@ -1,5 +1,5 @@
 class Button {
-    constructor(img,x,y,w,h,xspeed,yspeed,presstext) {
+    constructor(img,x,y,w,h,xspeed,yspeed,clicksound) {
         this.img = img;
         this.x = x;
         this.y = y;
@@ -7,7 +7,7 @@ class Button {
         this.h = h;
         this.xspeed = xspeed;
         this.yspeed = yspeed;
-        this.presstext = presstext;
+        this.clicksound = clicksound;
     }
     update() {
         this.x += this.xspeed;
@@ -24,7 +24,7 @@ class Button {
     }
     handleClick(mx,my) {
         if ((mx > this.x && mx < this.x + this.w) && (my > this.y && my < this.y + this.h)) {
-            console.log(this.presstext);
+            this.clicksound.play();
         }
 
             

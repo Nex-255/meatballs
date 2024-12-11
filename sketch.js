@@ -7,18 +7,21 @@ var blobs = []
 let paused = false
 const buttons = []
 let moldy;
+let gunstar;
 
 
 
 function preload() {
   moldy = loadImage('/meatballs/assets/IMG_0820.jpg')
+  soundFormats('wav');
+  gunstar = loadSound('/meatballs/assets/10')
 }
 
 function setup() {
   createCanvas(200,150);
   colorMode(HSB);
   for (i = 0; i < 10; i++) blobs.push(new Blob(random(0, width), random(0, height)));
-  let b = new Button(moldy,50,50,50,50,3,3,'willem dafoe smoking cigarette with two oranges one of them moldy');
+  let b = new Button(moldy,50,50,50,50,3,3,gunstar);
   buttons.push(b);
 }
 
