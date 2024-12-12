@@ -38,7 +38,8 @@ function draw() {
           let d = sqrt((xdif * xdif) + (ydif * ydif));
           sum += 10 * blobs[i].r / d;
         }
-        set(x, y, color(sum, 255, 255));
+        let clampedHue = map(sum, 0, 360, 80, 120);
+        set(x, y, color(clampedHue, 255, 255));
       }
     }
     updatePixels();
