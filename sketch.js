@@ -52,6 +52,8 @@ function draw() {
       buttons[i].update();
       buttons[i].draw();
     }
+
+    drawBottomBorder();
   } 
   else
   {
@@ -61,6 +63,21 @@ function draw() {
     textAlign(CENTER,CENTER);
     text('PAUSED', width/2, height/2);
   }
+}
+
+function drawBottomBorder() {
+  push();
+  const h = 20;
+  noStroke();
+  color(45,100,100);
+  rect(0, height - h, width, h);
+  const triangleWidth = 20;
+  let mod = frameCount % (width + triangleWidth) - triangleWidth;
+  for (let i = 0; i < width/triangleWidth + 1; ++i) {
+    let xoff = (mod + triangleWidth * i) % (width + triangleWidth) - triangleWidth;
+  triangle(xoff, height - h, xoff + triangleWidth,  height - h, xoff + triangleWidth / 2, height - h - triangleWidth);
+  }
+  pop();
 }
 
 function keyPressed() {
