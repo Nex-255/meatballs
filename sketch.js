@@ -53,6 +53,7 @@ function draw() {
       buttons[i].draw();
     }
 
+    drawTopBorder();
     drawBottomBorder();
   } 
   else
@@ -65,11 +66,25 @@ function draw() {
   }
 }
 
+function drawTopBorder() {
+  push();
+  const h = 20;
+  noStroke();
+  rect(0, 0, width, h);
+  const triangleWidth = 20;
+  let mod = frameCount % (width + triangleWidth) - triangleWidth;
+  for (let i = 0; i < width/triangleWidth + 1; ++i) {
+    let xoff = (mod + triangleWidth * i) % (width + triangleWidth) - triangleWidth;
+  triangle(xoff, h, xoff + triangleWidth, h, xoff + triangleWidth / 2, h + triangleWidth);
+  }
+  pop();
+}
+
 function drawBottomBorder() {
   push();
   const h = 20;
   noStroke();
-  color(45,100,100);
+  fill(45,100,100);
   rect(0, height - h, width, h);
   const triangleWidth = 20;
   let mod = frameCount % (width + triangleWidth) - triangleWidth;
