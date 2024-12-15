@@ -74,7 +74,7 @@ function drawTopBorder() {
   rect(0, 0, width, h);
   const triangleWidth = 20;
   let mod = frameCount % (width + triangleWidth) - triangleWidth;
-  for (let i = width/triangleWidth + 1; i > 0; ++i) {
+  for (let i = width/triangleWidth +1; i > 0; --i) {
     let xoff = (mod + triangleWidth * i) % (width + triangleWidth) - triangleWidth;
   triangle(xoff, h, xoff + triangleWidth, h, xoff + triangleWidth / 2, h + triangleWidth);
   }
@@ -88,8 +88,8 @@ function drawBottomBorder() {
   noStroke();
   rect(0, height - h, width, h);
   const triangleWidth = 20;
-  let mod = frameCount % (width + triangleWidth) - triangleWidth;
-  for (let i = 0; i < width/triangleWidth + 1; ++i) {
+  let mod = (-frameCount % (width + triangleWidth)) - triangleWidth;
+  for (let i = (width*2)/triangleWidth +2; i > 0; --i) {
     let xoff = (mod + triangleWidth * i) % (width + triangleWidth) - triangleWidth;
   triangle(xoff, height - h, xoff + triangleWidth,  height - h, xoff + triangleWidth / 2, height - h - triangleWidth);
   }
