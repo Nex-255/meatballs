@@ -15,9 +15,9 @@ let pauseFilter;
 
 function preload() {
   moldy = loadImage('/meatballs/assets/IMG_0820.jpg')
-  soundFormats('wav', 'ogg');
+  soundFormats('wav');
   gunstar = loadSound('/meatballs/assets/10')
-  tidal = loadSound('/meatballs/assets/O_TIDAL.ogg')
+  tidal = loadSound('/meatballs/assets/O_TIDAL')
 }
 
 function setup() {
