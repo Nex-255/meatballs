@@ -8,13 +8,16 @@ let paused = false
 const buttons = []
 let moldy;
 let gunstar;
+let tidal;
+let pauseFilter;
 
 
 
 function preload() {
   moldy = loadImage('/meatballs/assets/IMG_0820.jpg')
-  soundFormats('wav');
+  soundFormats('wav', 'ogg');
   gunstar = loadSound('/meatballs/assets/10')
+  tidal = loadSound('/meatballs/assets/O_TIDAL')
 }
 
 function setup() {
@@ -23,6 +26,15 @@ function setup() {
   for (i = 0; i < 10; i++) blobs.push(new Blob(random(0, width), random(0, height)));
   let b = new Button(moldy,50,50,50,50,3,3,gunstar);
   buttons.push(b);
+  pauseFilter = new p5.LowPass;
+  tidal.disconnect;
+  tidal.connect(pauseFilter);
+  pauseFilter.freq(750);
+  pauseFilter.res(0.3)
+
+
+
+  tidal.loop();
 }
 
 function draw() {
@@ -103,8 +115,10 @@ function keyPressed() {
 }
   
 function mousePressed() {
-  for (let i = 0; i < buttons.length; i++) {
-    let button = buttons[i];
-    button.handleClick(mouseX,mouseY);
+  if (!paused) {
+    for (let i = 0; i < buttons.length; i++) {
+      let button = buttons[i];
+      button.handleClick(mouseX,mouseY);
+   }
   }
 }
