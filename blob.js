@@ -9,16 +9,16 @@ class Blob {
     this.x = x;
     this.y = y;
     let angle = random(0, 2 * PI);
-    this.xspeed = random(0.8, 1) * Math.cos(angle);
-    this.yspeed = random(0.8, 1) * Math.sin(angle);
+    this.xspeed = random(4, 5) * Math.cos(angle);
+    this.yspeed = random(4, 5) * Math.sin(angle);
     this.r = random(120,180);
   }
 
   update() {
     this.x += this.xspeed;
     this.y += this.yspeed;
-    if (this.x > width || this.x < 0) this.xspeed -= this.xspeed*2 + 0.25;
-    if (this.y > height || this.y < 0) this.yspeed -= this.yspeed*2 + 0.25;
+    if (this.x > width || this.x < 0) this.xspeed *= -1;
+    if (this.y > height || this.y < 0) this.yspeed *= -1;
   }
 
   show() {
