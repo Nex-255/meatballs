@@ -74,7 +74,7 @@ function draw() {
     stroke(255);
     textSize(80);
     textAlign(CENTER,CENTER);
-    text('PAUSED', width/2, height/2);
+    text('PAUSED', 80, 60);
   }
 }
 
